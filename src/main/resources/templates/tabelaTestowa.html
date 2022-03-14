@@ -1,0 +1,39 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Tabela Testowa</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" th:href="@{/main.css}"/>
+</head>
+
+<body>
+
+<h2>Tabela Testowa</h2>
+
+<div class="display-one" style="width:300px">
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>kolumna1</th>
+            <th>kolumna2</th>
+            <th>kolumna3</th>
+            <th>kolumna4</th>
+        </tr>
+        <th:block th:each="tab: ${tabelaTestowa}">
+            <tr>
+                <td th:text="*{tab.id}">ID</td>
+                <td th:text="*{tab.kolumna1}">KOLUMNA1</td>
+                <td th:text="*{tab.kolumna2}">KOLUMNA2</td>
+                <td th:text="*{tab.kolumna3}">KOLUMNA3</td>
+                <td th:text="*{tab.kolumna4}">KOLUMNA4</td>
+            </tr>
+        </th:block>
+    </table>
+    <br>
+    <button onclick="window.location.href='/'">Powrot</button>
+</div>
+
+</body>
+
+</html>
